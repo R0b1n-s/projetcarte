@@ -12,7 +12,12 @@ class Carte:
         self.valeur = valeurs[nom]
 ############ Définition des méthodes d'instances avec contrôle #######
     def setNom(self, nom):
-        self.nom = nom
+        if nom in noms:
+            self.nom = nom
+            self.valeur=valeurs[nom]
+            return True
+        else:
+            return False
 
     def getNom(self):
         return self.nom
