@@ -9,7 +9,7 @@ class Carte:
         #Affection des attributs nom et couleur avec contrôle.
         self.nom = nom
         self.couleur = couleur
-        self.valeur = valeur[nom]
+        self.valeur = valeurs[nom]
 ############ Définition des méthodes d'instances avec contrôle #######
     def setNom(self, nom):
         self.nom = nom
@@ -33,7 +33,7 @@ class Carte:
         ''' Renvoie True si la valeur de self est supérieure à celle de carte,
         False sinon
         carte: Objet de type Carte'''
-        if carte.getValeur() >= self.getValeur():
+        if carte.getValeur() > self.getValeur():
             return True
         else:
             return False
@@ -42,8 +42,20 @@ class Carte:
         '''Renvoie True si la valeur e self est inférieure à celle de carte,
         False sinon
         carte: Objet de type Carte'''
-        if carte.getValeur() <= self.getValeur():
+        if carte.getValeur() < self.getValeur():
             return True
         else:
             return False
 
+
+
+def TestCarte():#Test de la class Carte
+    valetCoeur = Carte('Valet','Coeur')
+    print("Nom:",valetCoeur.getNom())
+    print('Couleur:',valetCoeur.getNom())
+    print('Valeur:',valetCoeur.getValeur())
+    valetCoeur.setNom('Dame')
+    print('Nom modifié :',valetCoeur.getNom())
+    print('Valeur modifié:',valetCoeur.getValeur())
+
+    dameCoeur = Carte("Dame","CoooEur")
