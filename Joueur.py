@@ -1,5 +1,7 @@
 from carte import *
-#from jeuxCarte import *
+from JeuCartes import *
+
+
 class Joueur():
     def __init__(self, nom,nbCarte,mainJoueur):
         self.nom = nom
@@ -23,6 +25,7 @@ class Joueur():
     def jouerCarte(self):
 
         derniereCarte= (self.mainJoueur[-1])
+
         if (derniereCarte == []):
             return "None"
         else:
@@ -39,7 +42,9 @@ class Joueur():
 
 
 def test():
-    a =[1,2,3]
+    main = JeuCartes(52)
+    main.creerJeu()
+    a= main.getJeu()
     _joueur = Joueur("Rob",32,a)
     _joueur.setMain(a)
     print(_joueur.getNom())
